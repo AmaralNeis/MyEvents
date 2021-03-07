@@ -1,0 +1,58 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MyEvents" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#13C296</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/mine_ice</item>
+        <!-- Customize your theme here. -->
+
+        <item name="black_white">#161616</item>
+        <item name="mine_ice">#1C1C1C</item>
+        <item name="green">#13C296</item>
+        <item name="greenAlpha">#8013C296</item>
+        <item name="blue">#304571</item>
+        <item name="granity">#7F8A8E</item>
+        <item name="grey">#9E9E9E</item>
+        <item name="grey70">#707070</item>
+        <item name="icon_white_blue">#FFFFFF</item>
+        <item name="fwhite">@color/purple_200</item>
+        <item name="stroke">#1E1E1E</item>
+        <item name="background_icon">#F8FAFB</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="o">false</item>
+    </style>
+
+    <style name="Theme.Splash" parent="Theme.MyEvents">
+        <item name="android:windowBackground">@drawable/splash_init</item>
+    </style>
+
+    <style name="MyEventsTextView" parent="Theme.MyEvents">
+        <item name="android:textColor">?attr/icon_white_blue</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/nunito_sans_semibold</item>
+        <item name="android:lineSpacingMultiplier">1</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginTop">24dp</item>
+    </style>
+
+    <style name="MyEventsEditText" parent="Widget.Design.TextInputLayout">
+        <item name="android:fontFamily">@font/nunito_sans</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">58dp</item>
+        <item name="android:paddingStart">0dp</item>
+        <item name="android:paddingEnd">0dp</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:layout_marginEnd">5dp</item>
+        <item name="android:textColor">?attr/green</item>
+        <item name="android:layout_marginTop">-9dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+</resources>

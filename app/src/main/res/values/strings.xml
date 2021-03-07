@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">My Events</string>
+    <string name="see_the_list_of_events_available_to_you">Veja a lista de eventos disponíveis para você</string>
+
+    <!-- Callback Response -->
+    <string name="response_offline">É necessário estar conectado a internet.</string>
+    <string name="response_timeout">Não foi possível efetuar conexão no momento. Por favor, tente novamente em alguns instantes.</string>
+    <string name="response_default">Não foi possível efetuar a solicitação no momento. Por favor, tente novamente em alguns instantes.</string>
+    <!--  Detail  -->
+    <string name="see_map">Ver no mapa</string>
+    <string name="check_in">check in</string>
+    <!--  Checkin  -->
+    <string name="check_in_description">Informe seu <b>nome</b> e seu <b>e-mail</b></string>
+    <string name="email">E-mail</string>
+    <string name="name">Nome</string>
+    <string name="name_error">Seu nome deve conter no minimo 3 caracteres</string>
+    <string name="email_error">Informe um e-mail valido</string>
+    <string name="email_empty">Preencha seu e-mail</string>
+    <string name="name_empty">Preencha seu nome</string>
+    <string name="checkin_success">Check-in realizado com sucesso</string>
+    <string name="checkin_error">Falha ao realizar o check-in. Tente mais tarde.</string>
+</resources>

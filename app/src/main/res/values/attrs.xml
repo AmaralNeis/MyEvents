@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="black_white" type="color"></attr>
+    <attr name="mine_ice" type="color"></attr>
+    <attr name="green" type="color"></attr>
+    <attr name="greenAlpha" type="color"></attr>
+    <attr name="blue" type="color"></attr>
+    <attr name="granity" type="color"></attr>
+    <attr name="grey" type="color"></attr>
+    <attr name="grey70" type="color"></attr>
+    <attr name="icon_white_blue" type="color"></attr>
+    <attr name="fwhite" type="color"></attr>
+    <attr name="stroke" type="color"></attr>
+    <attr name="background_icon" type="color"></attr>
+
+    <declare-styleable name="ButtonLoading">
+        <attr name="text" format="string" />
+    </declare-styleable>
+
+</resources>

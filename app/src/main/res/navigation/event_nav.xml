@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/event_nav"
+    app:startDestination="@id/eventFragment">
+
+    <fragment
+        android:id="@+id/eventFragment"
+        android:name="com.fneis.myevents.ui.features.event.list.EventFragment"
+        tools:layout="@layout/fragment_events"
+        android:label="@string/app_name"
+         >
+        <action
+            android:id="@+id/action_eventFragment_to_eventDetailFragment"
+            app:destination="@id/eventDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="com.fneis.myevents.ui.features.event.detail.EventDetailFragment"
+        tools:layout="@layout/fragment_event_detail"
+        android:label="Detalhes do evento">
+        <argument app:argType="com.fneis.myevents.model.data.Event"
+            android:name="event"
+            app:nullable="false"/>
+        <action
+            android:id="@+id/action_eventDetailFragment_to_chekinFragment"
+            app:destination="@id/chekinFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chekinFragment"
+        android:name="com.fneis.myevents.ui.features.event.checkIn.CheckInFragment"
+        android:label=" "
+        tools:layout="@layout/fragment_check_in">
+        <argument
+            android:name="idEvent"
+            app:argType="integer"
+            app:nullable="false"/>
+    </fragment>
+</navigation>
