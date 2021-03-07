@@ -1,14 +1,11 @@
 package com.fneis.myevents.repository.callback
 
 import com.fneis.myevents.R
-import com.fneis.myevents.application.MyEventsApp
 import com.fneis.myevents.util.NetworkUtils
 import retrofit2.Response
 
 abstract class BaseApiSource {
 
-    private val resources = MyEventsApp.context?.resources!!
-    private var UNAUTHORIZED = ""
     private val OFFLINE = "OFFLINE"
     private val TIMEOUT = "TIMEOUT"
     private val DEFAULT = "DEFAULT"
@@ -39,10 +36,9 @@ abstract class BaseApiSource {
     private fun <T> errorMessage(message: String): Result<T> {
 
         return when (message) {
-            UNAUTHORIZED -> Result.error(message)
-            OFFLINE -> Result.error(resources.getString(R.string.response_offline))
-            TIMEOUT -> Result.error(resources.getString(R.string.response_timeout))
-            else -> Result.error(resources.getString(R.string.response_default))
+            OFFLINE -> Result.error(R.string.response_offline)
+            TIMEOUT -> Result.error(R.string.response_timeout)
+            else -> Result.error(R.string.response_default)
         }
     }
 }

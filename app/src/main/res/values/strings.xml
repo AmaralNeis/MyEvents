@@ -6,6 +6,7 @@
     <string name="response_offline">É necessário estar conectado a internet.</string>
     <string name="response_timeout">Não foi possível efetuar conexão no momento. Por favor, tente novamente em alguns instantes.</string>
     <string name="response_default">Não foi possível efetuar a solicitação no momento. Por favor, tente novamente em alguns instantes.</string>
+    <string name="list_empty">Nenhum evento agendado neste momento</string>
     <!--  Detail  -->
     <string name="see_map">Ver no mapa</string>
     <string name="check_in">check in</string>

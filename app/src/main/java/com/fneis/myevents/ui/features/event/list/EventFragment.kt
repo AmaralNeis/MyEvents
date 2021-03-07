@@ -51,7 +51,7 @@ class EventFragment : Fragment() {
             viewLifecycleOwner,
             Observer {
                 it.first?.let { items -> showList(items) }
-                it.second?.let { showError(it) }
+                it.second?.let { message -> showError(message) }
             }
         )
     }
@@ -61,9 +61,9 @@ class EventFragment : Fragment() {
         adapter.submitList(items)
     }
 
-    private fun showError(message: String) {
+    private fun showError(message: Int) {
         binding.viewFlipper.displayedChild = 2
-        binding.errorTextView.text = message
+        binding.errorTextView.text = getString(message)
     }
 
     private fun openDetailWith(event: Event) {

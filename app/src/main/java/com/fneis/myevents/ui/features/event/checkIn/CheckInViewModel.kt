@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.fneis.myevents.extension.isEmail
 import com.fneis.myevents.extension.isNotEmail
 import com.fneis.myevents.model.data.CheckIn
 import com.fneis.myevents.repository.`interface`.CheckInRepository
@@ -33,7 +34,7 @@ class CheckInViewModel(private val repository: CheckInRepository) : ViewModel() 
     }
 
     fun validateNameWith(name: String): Boolean {
-        if (name.isEmpty()) {
+        if (name.isBlank()) {
             _formLiveData.value = CheckInState.NameEmpty
             return false
         }
@@ -55,6 +56,7 @@ class CheckInViewModel(private val repository: CheckInRepository) : ViewModel() 
 
     fun sendCheckin(checkIn: CheckIn) = viewModelScope.launch {
         val response = repository.sendCheckIn(checkIn)
-        _checkinLiveDate.postValue(response.status == Result.Status.SUCCESS)
+        val code = response.data?.code ?: -1
+        _checkinLiveDate.postValue(code == 200)
     }
 }

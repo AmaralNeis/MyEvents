@@ -2,6 +2,7 @@ package com.fneis.myevents.repository.api
 
 import com.fneis.myevents.model.data.CheckIn
 import com.fneis.myevents.model.data.Event
+import com.fneis.myevents.model.response.CheckInResponse
 import okhttp3.ResponseBody
 import retrofit2.Response
 import retrofit2.http.Body
@@ -14,5 +15,5 @@ interface EventApi {
     suspend fun fetchUrl(): Response<List<Event>>
 
     @POST("checkin")
-    suspend fun sendChekIn(@Body checkIn: CheckIn): Response<ResponseBody>
+    suspend fun sendChekIn(@Body checkIn: CheckIn): Response<CheckInResponse>
 }
