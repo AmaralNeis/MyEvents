@@ -1,5 +1,5 @@
 # My Events
-O  My Eventss é um aplicativo para você conseguir verificar eventos. Nele você vai poder compartilhar informações, abrir no mapa, fazer check-in e muito mais...
+O My Events é um aplicativo desenvolvido para você verificar seus eventos. Neste aplicativo você poderá compartilhar informações, acessar a localização do evento através do google maps, realizar check-in e muito mais...
 
 ### Executando 
   ``` Este projeto foi desenvolvido utilizando Android Studio 4.1.2 e Kotlin 1.4.31 ``` 
