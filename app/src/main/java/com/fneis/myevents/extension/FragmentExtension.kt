@@ -1,15 +1,13 @@
 package com.fneis.myevents.extension
 
-import android.app.AlertDialog
 import android.content.Context
 import android.view.inputmethod.InputMethodManager
-import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavDirections
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.FragmentNavigator
 import androidx.navigation.fragment.NavHostFragment
 import com.fneis.myevents.R
+import com.fneis.myevents.ui.nav.MainActivity
 
 fun Fragment.hideKeyboard() {
     val activity = activity ?: return
@@ -35,18 +33,18 @@ fun Fragment.openNavigationWith(directions: NavDirections, extras: FragmentNavig
     }
 }
 
-fun Fragment.dialogDefaultWithYesAndNo(
-    title: String,
-    message: String = "",
-    yesClickListener: () -> Unit,
-    noClickListener: () -> Unit = {}
-) {
-    AlertDialog.Builder(requireContext()).apply {
-        setTitle(title)
-        if (message.isNotEmpty())
-            setMessage(message)
-        setPositiveButton(android.R.string.ok) { _, _ -> yesClickListener() }
-        setNegativeButton(android.R.string.cancel) { _, _ -> noClickListener() }
-        show()
+fun Fragment.clearMenu() {
+    val main = requireActivity() as? MainActivity ?: return
+    main.toolbar.menu.clear()
+}
+
+fun Fragment.addMenu(callback: () -> Unit) {
+    clearMenu()
+    val main = requireActivity() as? MainActivity ?: return
+    main.toolbar.inflateMenu(R.menu.detail_menu)
+    main.toolbar.setOnMenuItemClickListener {
+        if (it.itemId == R.id.actionShare) { callback() }
+
+        return@setOnMenuItemClickListener true
     }
 }

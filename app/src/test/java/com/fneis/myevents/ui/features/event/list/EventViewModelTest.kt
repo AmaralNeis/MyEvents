@@ -7,15 +7,18 @@ import com.fneis.myevents.model.data.Event
 import com.fneis.myevents.repository.`interface`.EventRepository
 import com.fneis.myevents.repository.callback.Result
 import com.nhaarman.mockitokotlin2.verify
-import kotlinx.coroutines.*
-import kotlinx.coroutines.test.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.newSingleThreadContext
+import kotlinx.coroutines.test.resetMain
+import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.test.setMain
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations
-import kotlin.coroutines.CoroutineContext
 
 class EventViewModelTest {
 

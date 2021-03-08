@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.fneis.myevents.databinding.FragmentEventsBinding
+import com.fneis.myevents.extension.clearMenu
 import com.fneis.myevents.extension.openNavigationWith
 import com.fneis.myevents.model.data.Event
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -36,6 +37,7 @@ class EventFragment : Fragment() {
     private fun setup() {
         setupRecyclerView()
         setupObsever()
+        clearMenu()
         viewModel.getEvents()
     }
 

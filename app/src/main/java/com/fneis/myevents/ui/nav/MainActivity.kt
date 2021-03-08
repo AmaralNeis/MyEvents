@@ -1,6 +1,7 @@
 package com.fneis.myevents.ui.nav
 
 import android.os.Bundle
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
@@ -12,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     //region Var
     private lateinit var binding: ActivityMainBinding
+    lateinit var toolbar: androidx.appcompat.widget.Toolbar
     //endregion
 
     //region Life Cycle
@@ -31,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         val navController = host.navController
         val appBarConfiguration = AppBarConfiguration(navGraph = navController.graph)
         binding.toolbar.setupWithNavController(navController, appBarConfiguration)
+        this.toolbar = binding.toolbar
     }
     //endregion
 }

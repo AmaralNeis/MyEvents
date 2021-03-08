@@ -4,12 +4,12 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.transition.TransitionManager
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.fneis.myevents.databinding.FragmentEventDetailBinding
+import com.fneis.myevents.extension.addMenu
+import com.fneis.myevents.extension.clearMenu
 import com.fneis.myevents.extension.loadWith
 import com.fneis.myevents.extension.openNavigationWith
 import com.fneis.myevents.model.data.Event
@@ -22,7 +22,11 @@ class EventDetailFragment : Fragment() {
     //endregion
 
     //region Life Cycle
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         _binding = FragmentEventDetailBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -40,6 +44,7 @@ class EventDetailFragment : Fragment() {
         setupImageView(event)
         setupMapButton(event)
         setupCheckInButton(event)
+        setupShareButton()
     }
 
     private fun setupImageView(event: Event) {
@@ -91,8 +96,24 @@ class EventDetailFragment : Fragment() {
         }
     }
 
+    private fun setupShareButton() {
+        addMenu {
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, args.event.description)
+                putExtra(Intent.EXTRA_TITLE, args.event.title)
+                type = "text/html"
+            }
+
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            startActivity(shareIntent)
+        }
+    }
+
     private fun openChekInWith(idEvent: Int) {
-        val directions = EventDetailFragmentDirections.actionEventDetailFragmentToChekinFragment(idEvent)
+        val directions = EventDetailFragmentDirections.actionEventDetailFragmentToChekinFragment(
+            idEvent
+        )
         openNavigationWith(directions)
     }
     //endregion

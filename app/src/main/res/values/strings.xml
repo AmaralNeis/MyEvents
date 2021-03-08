@@ -20,4 +20,6 @@
     <string name="name_empty">Preencha seu nome</string>
     <string name="checkin_success">Check-in realizado com sucesso</string>
     <string name="checkin_error">Falha ao realizar o check-in. Tente mais tarde.</string>
+    <string name="share">Compartilhar</string>
+    <string name="menu_item_share">Compartilhar</string>
 </resources>

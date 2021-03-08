@@ -11,6 +11,7 @@ import androidx.navigation.fragment.navArgs
 import com.fneis.myevents.R
 import com.fneis.myevents.databinding.FragmentCheckInBinding
 import com.fneis.myevents.extension.afterTextChanged
+import com.fneis.myevents.extension.clearMenu
 import com.fneis.myevents.extension.hideKeyboard
 import com.fneis.myevents.model.data.CheckIn
 import com.google.android.material.snackbar.Snackbar
@@ -41,7 +42,11 @@ class CheckInFragment : Fragment() {
         setupObserver()
         setupNameEditText()
         setupEmailEditText()
+        setupChekInButton()
+        clearMenu()
+    }
 
+    private fun setupChekInButton() {
         binding.checkInButton.setOnClickListener {
             val email = binding.emailEditText.text.toString()
             val name = binding.nameEditText.text.toString()
