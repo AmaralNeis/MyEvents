@@ -37,8 +37,9 @@ class EventFragment : Fragment() {
     private fun setup() {
         setupRecyclerView()
         setupObsever()
+        setupSwipe()
         clearMenu()
-        viewModel.getEvents()
+        fetchEvents()
     }
 
     private fun setupRecyclerView() {
@@ -52,10 +53,21 @@ class EventFragment : Fragment() {
         viewModel.listLiveData.observe(
             viewLifecycleOwner,
             Observer {
+                binding.swipeRefreshLayout.isRefreshing = false
                 it.first?.let { items -> showList(items) }
                 it.second?.let { message -> showError(message) }
             }
         )
+    }
+
+    private fun setupSwipe() {
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            fetchEvents()
+        }
+    }
+
+    private fun fetchEvents() {
+        viewModel.getEvents()
     }
 
     private fun showList(items: List<Event>) {

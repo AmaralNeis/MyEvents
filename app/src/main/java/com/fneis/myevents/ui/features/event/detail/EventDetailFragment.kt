@@ -4,12 +4,13 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.transition.TransitionManager
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.fneis.myevents.databinding.FragmentEventDetailBinding
 import com.fneis.myevents.extension.addMenu
-import com.fneis.myevents.extension.clearMenu
 import com.fneis.myevents.extension.loadWith
 import com.fneis.myevents.extension.openNavigationWith
 import com.fneis.myevents.model.data.Event
